@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI CALCULATOR</title>
+    <!-- <link rel="stylesheet" href="/BMI_CALC/style.css"> -->
+     <style>
+      /* //reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display:flex;
+    flex-direction:column;
+    height:100vh;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(to right,rgb(255, 143, 143),rgb(162, 255, 162),rgb(151, 151, 255))
+
+}
+.container{
+   display: flex;
+   flex-direction:column;
+   align-items: center;
+   justify-content: center;
+   gap:1rem;
+   width:400px;
+   height:300px;
+   padding:10px;
+   background-color:rgb(255, 255, 255);
+   border-radius:20px;
+   font-family: Arial, Helvetica, sans-serif;
+}
+.container h1{
+   color:rgb(21, 189, 245);
+}
+.container p{
+    font-size:17px;
+    color:#6c6969;
+}
+.container #btn{
+    width:50%;
+    text-align: center;
+    margin-top: 1rem;
+    padding:12px;
+    color:#fff;
+    border:none;
+    background-color:chartreuse;
+    font-size:1rem;
+}
+.container #btn:hover{
+    cursor:pointer;
+    background-color:#0cb7fb;
+    scale:1.1;
+    transition:all ease 0.5s;
+    border-radius:10px;
+    box-shadow:2px 3px 8px rgb(255, 64, 249);
+}
+#result{
+    margin-top:1rem;
+
+    
+}
+     </style>
+  </head>
+  <body>
+
+ <div class="container">
+  <h1>BMI Calculator</h1>
+  <p>Click the button below to calculate your BMI</p>
+  <button id="btn">Calculate</button>
+  <div id="result"></div>
+ </div>
+
+
+<!-- <script src="/BMI_CALC/main.js"></script> -->
+ <script>
+  //arrow-function to declare:
+btn.addEventListener('click',()=>{
+
+//Input-prompt:
+let weightInput = prompt("Enter your Weight in kg ");
+let heightInput = prompt("Enter your height  in kg ");
+
+//to converted into : parseFloat();
+let weight = parseFloat(weightInput);
+let heightcm = parseFloat(heightInput);
+
+//height to convert into : meter;
+let height = heightcm / 100;
+
+//bmi to applied;
+let bmi =weight / (height**2);
+
+//bgmi calculate values:
+var show = document.getElementById('result');
+show.innerHTML=`your BMI is : ${bmi.toFixed(2)}`
+
+
+//updates-from-bmi:
+if(bmi<18.5){
+    alert(`UnderWeight`);
+    show.innerHTML=`your BMI is : ${bmi.toFixed(2) } UnderWeight`
+}
+else if(bmi>25){
+    alert('Normal weight');
+     show.innerHTML=`your BMI is : ${bmi.toFixed(2) } Normal weight`
+}
+else if (bmi>=25 && bmi<30){
+    alert('Over weight');
+         show.innerHTML=`your BMI is : ${bmi.toFixed(2) } Over weight`
+}
+else if(bmi>=30){
+    alert('Obese');
+    show.innerHTML=`your BMI is : ${bmi.toFixed(2) } Obese`
+    
+}
+else{
+    alert('Danger !');
+    show.innerHTML=`your BMI is : ${bmi.toFixed(2) } Danger !`
+}
+
+});
+
+ </script>
+  </body>
+</html>
