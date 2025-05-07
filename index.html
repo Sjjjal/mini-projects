@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator-Project</title>
+    <!-- css-link -->
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="calculator">
+    <h1>HS-CALC <span class="auto-type"></span></h1>
+    <input type="text" id="display" class="display">
+
+
+    <!-- button -->
+<div class="buttons">
+    <button onclick="clearDisplay()" class="btn">AC</button>
+
+<div class="btn-wrap">
+    <button class="btn" onclick="inputbox(7)">7</button>
+    <button class="btn" onclick="inputbox(8)">8</button>
+    <button class="btn" onclick="inputbox(9)">9</button>
+    <button class="btn" id="charAt" onclick="inputbox('/')">/</button>
+</div>
+
+<div class="btn-wrap">
+    <button class="btn" onclick="inputbox(4)">4</button>
+    <button class="btn"onclick="inputbox(5)">5</button>
+    <button class="btn" onclick="inputbox(6)">6</button>
+    <button class="btn"  id="charAt"  onclick="inputbox('*')">*</button>
+</div>
+
+<div class="btn-wrap">
+    <button class="btn" onclick="inputbox(1)">1</button>
+    <button class="btn" onclick="inputbox(2)">2</button>
+    <button class="btn" onclick="inputbox(3)">3</button>
+    <button class="btn" id="charAt"  onclick="inputbox('-')">-</button>
+</div>
+
+
+<div class="btn-wrap">
+    <button class="btn"  id="charAt" onclick="inputbox('.')">.</button>
+    <button class="btn"  onclick="inputbox(0)">0</button>
+    <button class="btn"  id="charAt" onclick="inputbox('+')">+</button>
+    <button class="btn"  id="charAt" onclick="calculate('=')">=</button>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+    <!-- auto-type:display -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+     <script>
+        var typed = new Typed(".auto-type",{
+            strings :["+","-","*","/","%"],
+            typeSpeed:150,
+            backSpeed:150,
+            looped : true
+        });
+
+        
+     </script>
+
+    <!-- js-link -->
+    <script src="main.js"></script>
+
+
+
+</body>
+</html>
